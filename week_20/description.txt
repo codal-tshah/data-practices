@@ -1,0 +1,13 @@
+- 20_may :
+    - ClaimDeck:
+        - finished up the Pytest for numbersviewset and PR is merged
+        
+    - Redshift:
+        - Resolved the issue of loading the data from s3 to the existing table 
+        - redshift spectrum : Amazon Redshift Spectrum is a feature of Amazon Redshift that lets you run queries against your data lake in Amazon S3, with no data loading or ETL required.
+        - run up the queries on csv data such such as :
+            - updating tables
+            - removing columns
+            - adding new columns 
+            - join operations
+

@@ -20,6 +20,7 @@
   - Local mode setup, when otherwise usage.
   - SQL Case When, Hadoop, and MapReduce concepts.
   - Spark engine workflows explanation.
+
 18_apr:
 - ClaiDeck:
   - Test case creation in models.py for globalsearch.
