@@ -17,3 +17,53 @@
         - map()
         - flatMap()
         - foreach()
+    
+23_apr:
+    - ClaimDeck:
+        - Configured factory for configvalue.
+        - Enhanced test coverage for views.
+
+    - PySpark:
+        - drop() & dropDuplicates().
+        - orderBy() and sort().
+        - groupBy().
+        - join().
+        - union() & unionAll().
+        - unionByName().
+        - transform().
+        - sample() vs sampleBy().
+        - fillna() & fill().
+        - pivot() (Row to Column).
+        - partitionBy().
+        - MapType (Map/Dict).
+
+24_apr:
+    - ClaimDeck:
+        - Revised search_utils.py in globalsearch: Addressed issues in the return_filter_qs function, focusing on generating test data for the MatterClaimInformation model using factories instead of direct database queries based on claim_name.
+        - Achieved test coverage of views up to 95%.
+        - Removed conftest and test_models files.
+
+    - PySpark:
+        - PySpark SQL Functions:
+            - Aggregate Functions
+            - Window Functions
+            - JSON Functions
+
+25_apr:
+    - ClaimDeck:
+        - Completed unit testing for views.py file.
+        - Completed unit testing for admin.py file.
+        - Initiated learning about response validation in test cases.
+
+    - PySpark:
+        - PySpark Datasources:
+            - CSV
+        
+26_apr:
+    - ClaimDeck:
+        - Created a draft pull request.
+        - Resolved an issue in tests/account/views.py.
+
+    - PySpark:
+        - Explored PySpark Datasources:
+            - Parquet File.

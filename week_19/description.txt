@@ -1,0 +1,84 @@
+13_may:
+    - Data Warehouse:
+        - Example: Running an e-commerce website involves collecting customer transaction data like order details, demographics, and interactions. 
+        - Extract: Data is gathered from the website's database and logs.
+        - Transform: Using ETL tools like Apache Airflow or AWS Glue to clean, aggregate, and format the data.
+        - Load: Loading the transformed data into AWS Redshift.
+        - Analysis: Running SQL queries on Redshift to analyze sales trends, customer behavior, etc.
+        - Visualization: Utilizing BI tools like Tableau or Amazon QuickSight to create visualizations.
+
+        - Learned:
+            - Data extraction and merging.
+            - ETL pipeline extraction and transformation.
+
+    - ClaimDeck:
+        - Progress:
+            - Started writing Pytest for NumbersViewset.
+            - Working on pytest for the claim_valuation function.
+
+14_may:
+    - Data Warehouse:
+        - Setting up github conflict
+        - Ended making of ETL pipelines
+
+    - ClaimDeck:
+        - (spent 8 hours on pytest only)
+        - Setup setup_model_objects for numbersviewset
+        - Written Pytest for numbersviewset
+            - test_get_serializer_class_valuation_data
+            - test_get_serializer_class_budget_data
+            - test_get_serializer_class_policy_data
+            - test_get_serializer_class_liens_data
+            - test_get_serializer_class_reserve_data
+            - test_get_valuation_data
+            - test_get_policy_data
+            - test_get_liens_data_with_liens
+            - test_get_liens_data_with_no_data
+            - test_get_liens_invalid_claim_id
+        - covered up the 70% for numbersviewset and overall viewset increased upto 18% to 22%            
+
+15_may:
+    - AWS Redshift:
+        - Creating a aws free tier account 
+        - started with Amazon Redshift Serverless
+        - created a cluster 
+
+    - JS:
+        - Made a logic for counting which day of month is this from the date 
+
+    - ClaimDeck:
+        - (spent 2.5 hrs on pytest)
+        - Setup setup_model_objects for numbersviewset
+        - Written Pytest for numbersviewset
+            - test_get_reserve_data_with_public_reserve
+            - test_get_reserve_data_with_private_reserve_other_organization
+            - test_get_reserve_data_with_private_reserve(get error in company_name)
+            - test_get_liens_data_without_claim_id(commented pytest for future)
+        - Made a factory in matter :
+            - ReserveFactory
+            - LiensFactory
+            - BudgetFactory
+        - covered up the 98% for numbersviewset and overall viewset increased upto 18% to 25% 
+
+16_may: 
+    - ClaimDeck:
+        - Achieved 100% test coverage for numbersviewset.
+        - Improved test coverage by adding response validation.
+        - Implemented functionality for org_type = carrier for organization and user.
+        - Completed get_reserve_data API for private organizations.
+
+    - AWS Redshift:
+        - Amazon Redshift: A fully managed data warehouse service.
+        - Applied ETL processes to load finalized data into data warehouse tables.
+        - Used copy job to integrate data directly from S3 to Redshift.
+
+17_may: 
+    - ClaimDeck:
+        - covered up the response data for org_type 
+        - making get_budget not none 
+    
+    - redshift:
+        - managing the cluster in aws 
+        - removed cluster and stopped services 
+        - working on Dbeaver and connecting to serverless redshift service
+        - created tables and loading data from s3.
