@@ -1,0 +1,17 @@
+27_may:
+    - ETL:
+        - Started Udemy course and completed 9 lectures.
+        - Began learning AWS RDS:
+            - Created a PostgreSQL database in RDS.
+            - Edited inbound rules in VPC.
+            - Connected database locally using DBeaver and pgAdmin.
+            - Encountered issues loading CSV files into tables using the COPY command.
+            - Loaded CSV files to AWS S3.
+            - Successfully loaded CSV file data into tables using the import data GUI.
+            - Failed to load CSV file into the `orders_reviews` table due to improper formatting.
+
+    - ClaimDeck:
+        - Reviewed 8 BUMP PRs.
+        - Reviewed CD-339 PR:
+            - Removed `globalsearch/factories.py`.
+            - Updated imports in `matter/test_views.py`.
