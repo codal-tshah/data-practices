@@ -1,0 +1,29 @@
+6_may:
+    - Data Warehouse:
+        - AWS Redshift Introduction
+
+7_may:
+    - Data Warehouse:
+        - AWS Redshift console management.
+        - Custom services setup for AWS Redshift:
+            - Configuring S3 bucket access.
+        - Creating AWS Redshift clusters.
+        - Loading data into AWS Redshift services:
+            - Locally loading data.
+            - Loading data from S3 bucket.
+
+8_may:
+    - Data Warehouse:
+        - Explored Redshift connection with ETL 
+        - ETL Introduction
+        - ETL process overview
+
+9_may:
+    - Data Warehouse:
+        - started learning of ETL Pipelines Tutorial | World Bank Dataset from kaggle
+
+10_may:
+    - Data Warehouse:
+        - Added a py file for etl operations
+        - made a project report
+        - made a ppt for project
