@@ -1,0 +1,31 @@
+csv files 
+created a database-2 in rds 
+rds_database_endpoint :database-2.ctausmmg292u.us-east-1.rds.amazonaws.com
+vpc_id : vpc-0072f61fb31738111 
+username: postgres
+password : 0kF0|#wB5.mb0ZY.1mRS}pQp0<_t
+
+Steps to Create and Configure an RDS Instance:
+
+1. **Create an RDS Instance:**
+   - Create a new database instance in RDS.
+   - Select PostgreSQL as the engine and choose the free tier option.
+
+2. **Configure Security Inbound Rules:**
+   - Go to the VPC settings and select the security group for your RDS instance.
+   - Edit the inbound rules:
+     - Add a PostgreSQL rule with the source `0.0.0.0/0`.
+
+3. **Copy the Database Endpoint:**
+   - Copy the endpoint of your PostgreSQL database from the RDS dashboard.
+
+Encountering Issues with COPY Command:
+
+- **Error Using COPY Command:**
+  - Errors may occur when using the `COPY` command to load data from a local CSV file.
+
+Alternative Data Loading Method:
+
+- **Load CSV File Using GUI in DBeaver:**
+  - Use DBeaver's import data feature to load the CSV file directly into your table, bypassing the `COPY` command.
+
