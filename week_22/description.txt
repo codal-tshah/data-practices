@@ -1,0 +1,10 @@
+3_june:
+    - ClaimDeck:
+        - Profile Pic Enhancement Ticket:
+            - Reviewed and commented on the ticket.
+            - Verified no issues with the enhancement.
+        - Red Dot Visibility Issue on Declined Notification:
+            - Identified the issue and removed the delay in the destroy API.
+            - Found that the delay caused the notification not to update when declined.
+            - Began debugging the issue using event delays in Celery.
+            - Utilized the Django debugger to find a solution.

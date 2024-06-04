@@ -1,0 +1,89 @@
+27_may:
+    - ETL:
+        - Started Udemy course and completed 9 lectures.
+        - Began learning AWS RDS:
+            - Created a PostgreSQL database in RDS.
+            - Edited inbound rules in VPC.
+            - Connected database locally using DBeaver and pgAdmin.
+            - Encountered issues loading CSV files into tables using the COPY command.
+            - Loaded CSV files to AWS S3.
+            - Successfully loaded CSV file data into tables using the import data GUI.
+            - Failed to load CSV file into the `orders_reviews` table due to improper formatting.
+
+    - ClaimDeck:
+        - Reviewed 8 BUMP PRs.
+        - Reviewed CD-339 PR:
+            - Removed `globalsearch/factories.py`.
+            - Updated imports in `matter/test_views.py`.
+
+28_may:
+    - ETL:
+        - Encountered an error loading CSV files using the GUI import tool.
+        - Created a new MySQL database in RDS (`database-1`):
+            - Connected MySQL to DBeaver.
+            - Created four tables.
+            - Faced issues loading data using `INFILE` command due to "Loading local data is disabled" error.
+        - Started cleaning data from CSV files using Pandas in a Colab notebook.
+
+    - ClaimDeck:
+        - Resolved the issue with `edit_notes` API Pytest.
+        - Wrote seven Pytest cases for `matter/ClaimValuationViewSet`.
+        - Encountered empty data issue in `test_claim_valuations_list`.
+        - Achieved 100% coverage in `views.py` for `ClaimValuationViewSet`.
+        - Made a commit, pushed the branch, and resolved code conflicts.
+        - Checked dependencies suggested by Dependabot in PRs for `requirements.txt`.
+
+29 May:
+    - ETL: (6.5 hrs)
+        - Performed an ETL on order_reviews:
+            - Removed null rows
+            - Split the data from date and time
+            - Removed unnecessary columns
+            - Changed data types
+            - Created a dump file and stored it in a CSV file
+        - Created a new table with different data types
+        - Loaded data in DBeaver using import data
+
+    - ClaimDeck: (1.5 hrs)
+        - Started working on verification ticket:
+            - Encountered an issue where the event icon is not created
+
+30 May:
+    - ETL:
+        - Downloaded py and ipynb files for commits
+
+    - ClaimDeck: (6 hrs)
+        - Worked on verification ticket:
+            - Verified dev server credentials
+            - Verified QA server
+            - Found some issues from BE:
+                - Issues in visibility of private events
+            - Found issues in FE:
+                - Box alignment is not proper
+                - Event icon is missing
+                - Color icon is not aligned
+            - Worked on different users in two organizations
+            - Raised a query regarding visibility of private events by the admin of a different organization          
+
+31_may:
+    - ETL
+        Progress:
+        - Began exploring AWS Glue for setting up the ETL pipeline. Configuration is not complete yet.
+        - Encountered an error while connecting the PostgreSQL database on RDS to AWS Glue for triggers.
+        - Working on creating a script to automate ETL jobs.
+
+    - ClaimDeck:
+        - Investigated the issue regarding the visibility of the red dot on dismissed notifications:
+            - Found that the values `{"global":true,"task_request":true}` should be `false` for the last dismissed notification.
+        - Started addressing a ticket related to the visibility of profile pictures:
+            - Verified functionality for one user, and it appears to be working fine.
+
+32_may: 
+    - ClaimDeck:
+        - Debug the partial_update for (mark as read) and destroy for (deleting the notification)
+        - While removing delay from destroy API it works perfectly fine. 
+
+    - ETL:
+        - started learning for setting up the connection between RDS and Redshift
+            - using estuary 
+            - got failed while makin connection 

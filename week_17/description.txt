@@ -1,0 +1,38 @@
+29_apr:
+- PySpark:
+  - Conducted hands-on practice with a small project involving Google Play Store data.
+  - Engaged in data cleaning and problem-solving tasks on the dataset.
+
+- ClaimDeck:
+  - Addressed data response issues in the queryset.
+  - Rectified empty responses in claims and documents.
+  - Achieved 90% coverage in serializers.
+
+30_apr:
+  - PySpark:
+    - Made a json data extarction in pandas 
+    - Started Data Warehouse 
+
+  - ClaimDeck:
+    - made a pagination.py 100% coverage
+    - working on search_utils.py 
+  
+2_may:
+  - ClaimDeck:
+    - Covered serializers 97% coverages
+    - upload the file locally in pytest 
+    - made search_utils.py coverages upto 90%
+
+3_may:
+  - Data Warehouse:
+    - Introduction to DW fundamentals.
+    - Understanding Data Mart and Data Metadata.
+    - Exploring data warehousing schemas:
+      - Star Schema
+      - Snowflake Schema
+      - Fact Constellation Schema
+        
+  - ClaimDeck:
+    - Commits made for Test Cases.
+    - Achieved 98% coverage in serializers.
+    - Achieved 93% coverage in search_utils.
