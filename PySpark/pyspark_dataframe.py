@@ -594,3 +594,333 @@ spark = (
 
 df = spark.range(100)
 print(df.sample(0.05, 123).collect())
+
+
+"""# **orderBy() and sort()**"""
+
+import pyspark
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import col, asc, desc
+
+spark = SparkSession.builder.appName("SparkByExamples.com").getOrCreate()
+
+simpleData = [
+    ("James", "Sales", "NY", 90000, 34, 10000),
+    ("Michael", "Sales", "NY", 86000, 56, 20000),
+    ("Robert", "Sales", "CA", 81000, 30, 23000),
+    ("Maria", "Finance", "CA", 90000, 24, 23000),
+    ("Raman", "Finance", "CA", 99000, 40, 24000),
+    ("Scott", "Finance", "NY", 83000, 36, 19000),
+    ("Jen", "Finance", "NY", 79000, 53, 15000),
+    ("Jeff", "Marketing", "CA", 80000, 25, 18000),
+    ("Kumar", "Marketing", "NY", 91000, 50, 21000),
+]
+columns = ["employee_name", "department", "state", "salary", "age", "bonus"]
+
+df = spark.createDataFrame(data=simpleData, schema=columns)
+
+df.printSchema()
+df.show(truncate=False)
+
+df.sort("department", "state").show(truncate=False)
+df.sort(col("department"), col("state")).show(truncate=False)
+
+df.orderBy("department", "state").show(truncate=False)
+df.orderBy(col("department"), col("state")).show(truncate=False)
+
+df.sort(df.department.asc(), df.state.asc()).show(truncate=False)
+df.sort(col("department").asc(), col("state").asc()).show(truncate=False)
+df.orderBy(col("department").asc(), col("state").asc()).show(truncate=False)
+
+df.sort(df.department.asc(), df.state.desc()).show(truncate=False)
+df.sort(col("department").asc(), col("state").desc()).show(truncate=False)
+df.orderBy(col("department").asc(), col("state").desc()).show(truncate=False)
+
+df.createOrReplaceTempView("EMP")
+spark.sql(
+    "select employee_name,department,state,salary,age,bonus from EMP ORDER BY department asc"
+).show(truncate=False)
+
+"""# **Union and UnionAll**"""
+
+spark = SparkSession.builder.appName("SparkByExamples.com").getOrCreate()
+
+simpleData = [
+    ("James", "Sales", "NY", 90000, 34, 10000),
+    ("Michael", "Sales", "NY", 86000, 56, 20000),
+    ("Robert", "Sales", "CA", 81000, 30, 23000),
+    ("Maria", "Finance", "CA", 90000, 24, 23000),
+]
+
+columns = ["employee_name", "department", "state", "salary", "age", "bonus"]
+df = spark.createDataFrame(data=simpleData, schema=columns)
+df.printSchema()
+df.show(truncate=False)
+
+simpleData2 = [
+    ("James", "Sales", "NY", 90000, 34, 10000),
+    ("Maria", "Finance", "CA", 90000, 24, 23000),
+    ("Jen", "Finance", "NY", 79000, 53, 15000),
+    ("Jeff", "Marketing", "CA", 80000, 25, 18000),
+    ("Kumar", "Marketing", "NY", 91000, 50, 21000),
+]
+columns2 = ["employee_name", "department", "state", "salary", "age", "bonus"]
+
+df2 = spark.createDataFrame(data=simpleData2, schema=columns2)
+
+df2.printSchema()
+df2.show(truncate=False)
+
+unionDF = df.union(df2)
+unionDF.show(truncate=False)
+disDF = df.union(df2).distinct()
+disDF.show(truncate=False)
+
+unionAllDF = df.unionAll(df2)
+unionAllDF.show(truncate=False)
+
+"""# **Transformation**
+
+- pyspark.sql.DataFrame.transform() – Available since Spark 3.0
+- pyspark.sql.functions.transform()
+"""
+
+# Imports
+from pyspark.sql import SparkSession
+
+# Create SparkSession
+spark = SparkSession.builder.appName("SparkByExamples.com").getOrCreate()
+
+# Prepare Data
+simpleData = (
+    ("Java", 4000, 5),
+    ("Python", 4600, 10),
+    ("Scala", 4100, 15),
+    ("Scala", 4500, 15),
+    ("PHP", 3000, 20),
+)
+columns = ["CourseName", "fee", "discount"]
+
+# Create DataFrame
+df = spark.createDataFrame(data=simpleData, schema=columns)
+df.printSchema()
+df.show(truncate=False)
+
+from pyspark.sql.functions import upper
+
+
+def to_upper_str_columns(df):
+    return df.withColumn("CourseName", upper(df.CourseName))
+
+
+# Custom transformation 2
+def reduce_price(df, reduceBy):
+    return df.withColumn("new_fee", df.fee - reduceBy)
+
+
+# Custom transformation 3
+def apply_discount(df):
+    return df.withColumn(
+        "discounted_fee", df.new_fee - (df.new_fee * df.discount) / 100
+    )
+
+
+df2 = (
+    df.transform(to_upper_str_columns)
+    .transform(reduce_price, 1000)
+    .transform(apply_discount)
+)
+
+df2.show()
+
+from pyspark.sql import SparkSession
+
+# Create SparkSession
+spark = SparkSession.builder.appName("SparkByExamples.com").getOrCreate()
+
+# Prepare Data
+simpleData = (
+    ("Java", 4000, 5),
+    ("Python", 4600, 10),
+    ("Scala", 4100, 15),
+    ("Scala", 4500, 15),
+    ("PHP", 3000, 20),
+)
+columns = ["CourseName", "fee", "discount"]
+
+# Create DataFrame
+df = spark.createDataFrame(data=simpleData, schema=columns)
+df.printSchema()
+df.show(truncate=False)
+
+# Custom transformation 1
+from pyspark.sql.functions import upper
+
+
+def to_upper_str_columns(df):
+    return df.withColumn("CourseName", upper(df.CourseName))
+
+
+# Custom transformation 2
+def reduce_price(df, reduceBy):
+    return df.withColumn("new_fee", df.fee - reduceBy)
+
+
+# Custom transformation 3
+def apply_discount(df):
+    return df.withColumn(
+        "discounted_fee", df.new_fee - (df.new_fee * df.discount) / 100
+    )
+
+
+# transform() usage
+df2 = (
+    df.transform(to_upper_str_columns)
+    .transform(reduce_price, 1000)
+    .transform(apply_discount)
+)
+
+df2.show()
+
+# Create DataFrame with Array
+data = [
+    ("James,,Smith", ["Java", "Scala", "C++"], ["Spark", "Java"]),
+    ("Michael,Rose,", ["Spark", "Java", "C++"], ["Spark", "Java"]),
+    ("Robert,,Williams", ["CSharp", "VB"], ["Spark", "Python"]),
+]
+df = spark.createDataFrame(data=data, schema=["Name", "Languages1", "Languages2"])
+df.printSchema()
+df.show()
+
+# using transform() SQL function
+from pyspark.sql.functions import upper
+from pyspark.sql.functions import transform
+
+df.select(transform("Languages1", lambda x: upper(x)).alias("languages1")).show()
+
+"""# **fillna() & fill()**"""
+
+# Create SparkSession and read csv
+from pyspark.sql import SparkSession
+
+spark = (
+    SparkSession.builder.master("local[1]").appName("SparkByExamples.com").getOrCreate()
+)
+
+filePath = "/content/drive/MyDrive/data_practices/pandas/data/air_quality_no2.csv"
+df = spark.read.options(header="true", inferSchema="true").csv(filePath)
+
+df.printSchema()
+df.show(truncate=False)
+
+from pyspark.sql.functions import col, isnan, when, count
+
+df.filter(df.station_paris.isNull()).show()
+
+dff = df.na.fill(value=0, subset=["station_paris"])
+dff.filter(df.station_paris == 0.0).show()
+dff.show()
+
+df.na.fill("unknown", ["station_paris"]).na.fill(" ", ["station_london"]).show()
+
+df.na.fill({"station_paris": "unknown", "station_london": ""}).show()
+
+dff = df.null.fill(value="unknown", subset=["station_antwerp"])
+# dff.filter(df.station_paris=="unknown").show()
+dff.show()
+
+null_count = df.filter(col("station_antwerp").isNull()).count()
+print("Null count in 'station_antwerp' column:", null_count)
+
+# Check for null and empty string values in 'station_antwerp' column
+null_count = df.filter(
+    (col("station_antwerp").isNull()) | (col("station_antwerp") == "")
+).count()
+
+# If there are null or empty string values, replace them with "unknown"
+if null_count > 0:
+    dff = df.na.fill(value="unknown", subset=["station_antwerp"])
+    dff.show()
+else:
+    print("No null or empty string values found in 'station_antwerp' column.")
+
+from pyspark.sql import SparkSession
+
+spark = (
+    SparkSession.builder.master("local[1]").appName("SparkByExamples.com").getOrCreate()
+)
+
+filePath = "/content/drive/MyDrive/data_practices/pandas/data/air_quality_no2_long.csv"
+df = spark.read.options(header="true", inferSchema="true").csv(filePath)
+
+df.printSchema()
+df.show(truncate=False)
+
+
+df.fillna(value=0).show()
+df.fillna(value=0, subset=["location"]).show()
+df.na.fill(value=0).show()
+df.na.fill(value=0, subset=["value"]).show()
+
+
+df.fillna(value="").show()
+df.na.fill(value="").show()
+
+df.fillna("unknown", ["location"]).fillna("", ["parameter"]).show()
+
+df.fillna({"value": "unknown", "parameter": ""}).show()
+
+df.na.fill("unknown", ["value"]).na.fill("", ["parameter"]).show()
+
+df.na.fill({"value": "unknown", "parameter": ""}).show()
+
+
+"""# **Pivot and Unpivot**
+
+**PySpark pivot() function is used to rotate/transpose the data from one column into multiple Dataframe columns and back using unpivot(). Pivot() It is an aggregation where one of the grouping columns values is transposed into individual columns with distinct data.**
+"""
+
+import pyspark
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import expr
+
+# Create spark session
+data = [
+    ("Banana", 1000, "USA"),
+    ("Carrots", 1500, "USA"),
+    ("Beans", 1600, "USA"),
+    ("Orange", 2000, "USA"),
+    ("Orange", 2000, "USA"),
+    ("Banana", 400, "China"),
+    ("Carrots", 1200, "China"),
+    ("Beans", 1500, "China"),
+    ("Orange", 4000, "China"),
+    ("Banana", 2000, "Canada"),
+    ("Carrots", 2000, "Canada"),
+    ("Beans", 2000, "Mexico"),
+]
+
+columns = ["Product", "Amount", "Country"]
+df = spark.createDataFrame(data=data, schema=columns)
+df.printSchema()
+df.show()
+
+pivotDF = df.groupBy("Product").pivot("Country").sum("Amount")
+pivotDF.printSchema()
+pivotDF.show(truncate=False)
+
+countries = ["USA", "China", "Canada", "Mexico"]
+pivotDF = df.groupBy("Product").pivot("Country", countries).sum("Amount")
+pivotDF.show(truncate=False)
+
+""" unpivot """
+unpivotExpr = (
+    "stack(3, 'Canada', Canada, 'China', China, 'Mexico', Mexico) as (Country,Total)"
+)
+unPivotDF = pivotDF.select("Product", expr(unpivotExpr)).where("Total is not null")
+unPivotDF.show(truncate=False)
+
+"""# **PartitionBy()**
+
+PySpark partitionBy() is a function of pyspark.sql.DataFrameWriter class which is used to partition the large dataset (DataFrame) into smaller files based on one or multiple columns while writing to disk,
+"""

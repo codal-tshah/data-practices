@@ -1,0 +1,32 @@
+29_apr:
+  - PySpark:
+    - Hands-on project with data from Google Play Store.
+    - Data cleaning and problem-solving.
+
+  - ClaimDeck:
+    - Addressed queryset and response issues.
+    - Improved coverage in serializers.
+
+30_apr:
+  - PySpark:
+    - JSON data extraction.
+    - Started learning Data Warehouse.
+
+  - ClaimDeck:
+    - Achieved 100% coverage in pagination.
+    - Worked on improving coverage in search_utils.
+
+2_may:
+  - ClaimDeck:
+    - Achieved 97% coverage in serializers.
+    - Implemented local file upload in pytest.
+    - Enhanced coverage in search_utils.
+
+3_may:
+  - Data Warehouse:
+    - Introduction to DW fundamentals.
+    - Explored warehousing schemas.
+
+  - ClaimDeck:
+    - Continued Test Case commits.
+    - Maintained high coverage.

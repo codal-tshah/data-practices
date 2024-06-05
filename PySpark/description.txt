@@ -58,7 +58,6 @@
 22_apr:
 - Collect() – Retrieve data from DataFrame
 - select()
-- collect()
 - withCoIumn()
 - withColumnRenamed()
 - where() & filter()
@@ -67,3 +66,23 @@
 - map()
 - flatMap()
 - foreach()
+
+23_apr:
+- drop() & dropDuplicates()
+- orderBy() and sort()
+- groupBy()
+- join()
+- union() & unionAll()
+- unionByName()
+- transform()
+- sample() vs sampleBy()
+- fillna() & fill()
+- pivot() (Row to Column)
+- partitionBy() 
+- MapType (Map/Dict)
+
+24_apr:
+- PySpark SQL Functions
+  - Aggregate Functions
+  - Window Functions
+  - JSON Functions
