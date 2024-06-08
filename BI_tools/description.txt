@@ -1,0 +1,21 @@
+Making a flow (pandas):
+            - fetch the data from nse about nifty sectoral indices of 1 year data in csv format 
+            - gather all the files 
+            - add symbol to files 
+            - save the csv files in local only 
+            
+        - in etl (lambda process)
+            - do swap the position of columns
+            - changing column name 
+            - do check the datatypes and change it accroding to the need
+        
+        - redshift warehouse :
+            - make a table with applying , dist and short keys
+            - make date as primary key 
+            - load the csv data from s3
+            - perform query if needed to analyze insights
+        
+        - Tableau
+            - connection of redshift to Tableau
+            - set up data model 
+            - make insights
