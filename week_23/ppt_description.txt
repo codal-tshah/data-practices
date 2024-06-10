@@ -1,0 +1,54 @@
+week 13 and 14 
+    - claimdeck :
+        - worked on swagger and setup of celery worker 
+        - stated learning pytest and structure of pytest and tutrial of pytest
+        - worked on pdf export in local and css helped to griva in frontend
+
+    - data practices: 
+        pandas (week - 13 and 14):
+            - general:
+                Introduction to Pandas  
+                Pandas Data Structures  
+                Data Handling in Pandas  
+                Working with Data in Pandas  
+                Reading and Writing Data  
+                Data Analysis and Visualization  
+                Advanced Data Manipulation
+
+            - in depth :
+                Introduction to Pandas  
+                Pandas Data Structures  
+                - Series (1D)
+                - DataFrame (2D)
+
+                Data Handling in Pandas  
+                - Managing numeric data
+                - Managing categorical data
+
+                Working with Data in Pandas  
+                - Selecting subsets of a DataFrame
+                - Creating new columns
+                - Applying functions to data
+
+                Reading and Writing Data  
+                - Reading data with `.read_csv()`
+                - Writing data with `.to_excel()`
+                - Handling other file formats (JSON, HTML, etc.)
+
+                Data Analysis and Visualization  
+                - Calculating summary statistics
+                - Creating plots
+                - Grouping and aggregating data
+
+                Advanced Data Manipulation  
+                - Reshaping tables (pivot, melt)
+                - Merging and joining DataFrames
+                - Handling missing data
+                - Time series data handling
+                - Text data manipulation
+
+week 14,15,16:
+    - claimdeck :
+        - started writing pytest for globalsearch
+        
+    

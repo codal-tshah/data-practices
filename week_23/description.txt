@@ -1,0 +1,12 @@
+10_june:
+    - Demo Project:
+        - Connected the Lambda function to the S3 bucket to perform ETL operations.
+        - Encountered failures with the Pandas module.
+        - Created a custom layer for Lambda by attaching a zip file of the virtual environment with required packages/libraries.
+        - Faced issues with the custom layer for the nifty_demo file, encountering a key error.
+        - Diagnosed the error by printing logs and identified a file name issue due to spaces.
+        - Renamed all files locally, uploaded them to nifty_demo, and successfully established the connection.
+        - Successfully triggered Lambda.
+        - Created tables for all files.
+        - Encountered a copy job error while loading CSV files to Redshift.
+        - Set up an RDS PostgreSQL database and table to connect to Lambda for the demo.
