@@ -9,3 +9,43 @@
     - withColumn(), withColumnRenamed().
     - where(), filter(), drop(), dropDuplicates().
     - apply(), map(), flatMap(), foreach().
+
+23_apr:
+- ClaimDeck:
+    - Configured factory for configvalue.
+    - Enhanced test coverage for views.
+
+- PySpark:
+    - DataFrame operations:
+        - drop() & dropDuplicates().
+        - orderBy(), sort(), groupBy(), join().
+        - union(), unionAll(), unionByName().
+        - transform(), sample() vs sampleBy().
+        - fillna() & fill().
+        - pivot() (Row to Column), partitionBy().
+        - MapType (Map/Dict).
+
+24_apr:
+- ClaimDeck:
+    - Refactored search_utils.py for improved test data generation.
+    - Achieved 95% test coverage in views.
+    - Removed conftest and test_models files.
+
+- PySpark:
+    - Introduced PySpark SQL Functions:
+        - Aggregate, Window, and JSON Functions.
+    
+25_apr:
+- ClaimDeck:
+    - Completed unit testing for views and admin files.
+    - Started learning response validation.
+
+- PySpark:
+    - Explored PySpark CSV datasources.
+
+26_apr:
+- ClaiDeck:
+    - Draft PR created, issue resolved in tests/account/views.py
+
+- PySpark:
+    - Explored Parquet File as a PySpark datasource.
