@@ -1,0 +1,17 @@
+
+- "Simplified Flow Diagram"
+        Data Sources (Databases, APIs, Files)
+        ↓
+        S3 (Staging Storage)
+            Stores raw and intermediate data
+        ↓
+        ETL Process (Using tools like AWS Glue, Apache NiFi, or custom scripts)
+            Extract data from sources
+            Transform data (cleaning, formatting)
+            Load data into the data warehouse (Redshift)
+        ↓
+        Amazon Redshift (Cluster or Serverless)
+            Store and query the transformed data
+        ↓
+        DBeaver (or other SQL clients)
+            Connect to Redshift for querying and managing data
