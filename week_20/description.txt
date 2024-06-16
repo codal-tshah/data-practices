@@ -1,0 +1,58 @@
+- 20_may :
+    - ClaimDeck:
+        - finished up the Pytest for numbersviewset and PR is merged
+        
+    - Redshift:
+        - Resolved the issue of loading the data from s3 to the existing table 
+        - redshift spectrum : Amazon Redshift Spectrum is a feature of Amazon Redshift that lets you run queries against your data lake in Amazon S3, with no data loading or ETL required.
+        - run up the queries on csv data such such as :
+            - updating tables
+            - removing columns
+            - adding new columns 
+            - join operations
+
+21_may:
+    - Redshift:
+        - Learned about distribution keys and sort keys.
+        - Learned AWS CLI.
+        - Managed AWS IAM users and root users.
+        - Assigned roles and policies.
+        - Created access keys, secret keys, and S3 keys.
+        - Connected S3 and loaded data into Redshift using a Python script:
+            - Executed queries and printed results.
+            - Printed data using pandas DataFrame.
+        - Resolved sys_load_error_detail issue by printing error details.
+
+22_may:
+    - ClaimDeck:
+        - Writing Pytest for matter/ClaimValuationViewSet:
+            - Written 4 test cases:
+                - 2 passed and 2 failed.
+                - Encountered error: 'str' object has no attribute 'get'.
+
+    - Redshift:
+        - Updated the script for better results.
+        - Added .env files.
+        - Removed credentials from the main file.
+
+23_may:
+    - ClaimDeck:
+        - Writing Pytest for ClaimValuationViewSet:
+            - Covered the API for list.
+            - Encountered an error in retrieving verdict_documents.
+            - Encountered an error in the PATCH API for edit_notes not found.
+
+    - Redshift:
+        - Working on AWS Redshift for loading data using Pandas:
+            - Read CSV files using Pandas and performed queries on them.
+            - Encountered a connection error with Redshift using SQLAlchemy's engine.
+
+24_may:
+    - ClaimDeck:
+        - Resolved the error of verdict_document in retrieve api 
+            - added factory data in that
+        - Covered upto 80% in that ClaimValuationViewSet
+
+    - Redshift:
+        - Resolved the branch and push conflicts of github 
+        - error in pandas to load the data in redhsift
