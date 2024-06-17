@@ -1,0 +1,11 @@
+17_june:
+    - ClaimDeck:
+        - Verified the proper working of red dot visibility (CD-468).
+
+    - Lawson:
+        - Set up the Scrapy project and learned the workflow.
+        - Explored Scrapy shell for data fetching.
+        - Encountered and managed `robots.txt` rules.
+        - Integrated Scrapy with Flask and resolved issues with empty data.
+        - Learned to use XPath for data extraction with Scrapy.
+        - Investigated web scraping for "https://www.fastenal.com" and encountered an `asyncio` error: `[asyncio] DEBUG: Using proactor: IocpProactor`.
