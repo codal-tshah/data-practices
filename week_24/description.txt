@@ -1,0 +1,25 @@
+17_june:
+    - ClaimDeck:
+        - Verified the proper working of red dot visibility (CD-468).
+
+    - Lawson:
+        - Set up the Scrapy project and learned the workflow.
+        - Explored Scrapy shell for data fetching.
+        - Encountered and managed `robots.txt` rules.
+        - Integrated Scrapy with Flask and resolved issues with empty data.
+        - Learned to use XPath for data extraction with Scrapy.
+        - Investigated web scraping for "https://www.fastenal.com" and encountered an `asyncio` error: `[asyncio] DEBUG: Using proactor: IocpProactor`.
+
+18_june:
+    - ClaimDeck:
+        - Developed PyTest for 'MatterClaimPlaintiffClaimInformationViewsetOverview'.
+        - Achieved 95% test coverage for this viewset.
+        - Identified and noted that the "else" part for non-values is still uncovered.
+
+    - Lawson:
+        - Continued learning and using Scrapy shell for proper data passing.
+        - Identified XPath issues for web scraping data from 'fastenal'.
+        - Learned how to utilize XPath with class and other tags for data scraping and iteration.
+        - Created a Python script for web scraping data from 'zoro.com'.
+        - Implemented pagination in the script to handle large data sets from Zoro.
+        - Added a small script to format and clean the scraped data.   
