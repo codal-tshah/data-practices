@@ -1,0 +1,29 @@
+demo-cluster-2: 
+    - arn:aws:kafka:us-east-1:905418442130:cluster/demo-cluster-1/bdb052c3-8821-4486-87b4-3414762bb9ba-s2
+    - Cluster type: Serverless
+
+default serverless redshift:
+    - url : jdbc:redshift://default-workgroup.905418442130.us-east-1.redshift-serverless.amazonaws.com:5439/dev
+    - arn : arn:aws:redshift-serverless:us-east-1:905418442130:workgroup/22a86b38-09f7-44eb-a494-e7f4e40b8bb9
+    - region : us-east-1
+    - end point : default-workgroup.905418442130.ap-south-1.redshift-serverless.amazonaws.com:5439/dev
+
+AWS Redshift Overview
+    Data Warehouse: AWS Redshift itself acts as a data warehouse where you can store and analyze large volumes of data.
+    Storage: Data is stored in Redshift tables, not directly in files like CSV. You load data into these tables from various sources (e.g., S3, RDS, etc.).
+    Querying: You perform queries on data stored in these Redshift tables, not directly on files.
+
+21_may:
+- we use copy command to load data because it works as a mpp(multiple parallel processing thing), insert queries runs and iterate line by line and take more time rather than copy job breaks in multiple parts and do load the data parallely.
+
+- Types of Distribution Styles
+    AUTO: Redshift decides the distribution style.
+    KEY: Data is distributed based on the values in one column.
+    ALL: A copy of the entire table is distributed to every node.
+    EVEN: Data is distributed evenly across all nodes.
+
+- SORT KEYS: 
+    Sort keys determine the order in which data is stored. They can significantly speed up queries that use range-restricted predicates, such as those involving BETWEEN, <, <=, >, and >=.
+    - Types of Sort Keys
+        COMPOUND: Multiple columns are sorted in the order specified. Good for queries that filter on the leading columns.
+        INTERLEAVED: Columns are equally important for sorting, and Redshift can quickly filter on any combination of the specified columns.
