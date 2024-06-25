@@ -1,0 +1,72 @@
+17_june:
+    - ClaimDeck:
+        - Verified the proper working of red dot visibility (CD-468).
+
+    - Lawson:
+        - Set up the Scrapy project and learned the workflow.
+        - Explored Scrapy shell for data fetching.
+        - Encountered and managed `robots.txt` rules.
+        - Integrated Scrapy with Flask and resolved issues with empty data.
+        - Learned to use XPath for data extraction with Scrapy.
+        - Investigated web scraping for "https://www.fastenal.com" and encountered an `asyncio` error: `[asyncio] DEBUG: Using proactor: IocpProactor`.
+
+18_june:
+    - ClaimDeck:
+        - Developed PyTest for 'MatterClaimPlaintiffClaimInformationViewsetOverview'.
+        - Achieved 95% test coverage for this viewset.
+        - Identified and noted that the "else" part for non-values is still uncovered.
+
+    - Lawson:
+        - Continued learning and using Scrapy shell for proper data passing.
+        - Identified XPath issues for web scraping data from 'fastenal'.
+        - Learned how to utilize XPath with class and other tags for data scraping and iteration.
+        - Created a Python script for web scraping data from 'zoro.com'.
+        - Implemented pagination in the script to handle large data sets from Zoro.
+        - Added a small script to format and clean the scraped data.   
+
+19_june:
+    - ClaimDeck:
+        - Started working on exporting the claim table and encountered an "Invalid string format" issue.
+        - Deleted the existing ClaimDeck database.
+        - Created and attempted to restore a new database but got stuck during the data restore process.
+        - Tried working with SQL restore and fixture load but faced export issues.
+        - Created another new database, added new access keys in credentials, and loaded fixtures successfully.
+        - Worked on bulk upload and encountered an error in the URM column.
+        - Added the URM column to the bulk Excel file and successfully loaded it.
+        - Commented out the date format in `admin.py` file to resolve the date format error.
+        - Confirmed that bulk upload and export functionalities are working fine.
+
+    Lawson:
+        - Investigated web scraping data from Grainger.
+
+20_june:
+    - Lawson:
+        - Worked on scraping data from Grainger.
+        - Discovered two Grainger domains: Canada and Global.
+        - Developed scripts for both domains to scrape data.
+        - Learned how to create XPath expressions.
+        - Noted different UIs on the Global site due to search keywords.
+        - Successfully fetched categories on the Global site but unable to find subcategories.
+
+21_june:
+    - ClaimDeck:
+        Continued work on the Django export flow.
+        Created different contacts to fetch details.
+        Added a list of fields for display.
+        Encountered and addressed incorrect field details in the PDF.
+        Faced an issue with the front-end after the latest pull.
+        Resolved the node version issue.
+        Fixed package.json using Yarn.
+    - Lawson:
+        Continued exploring Grainger with Scrapy. 
+
+24_june:
+    - Lawson:
+        - scrapping the data by Grainger
+        - 
+
+25_june:
+    - ClaimDeck:
+        - editing django export script
+        - edited all data fields
+        - edited dehydtrated in class
