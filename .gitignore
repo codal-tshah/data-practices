@@ -3,3 +3,9 @@
 data
 node_modules
 package.json
+redshift/vehicles-etl.py
+demo_data
+ecomm_data
+.env
+s.py
+null.txt
