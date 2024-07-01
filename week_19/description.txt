@@ -42,7 +42,6 @@
         - Creating a aws free tier account 
         - started with Amazon Redshift Serverless
         - created a cluster 
-        - 
 
     - JS:
         - Made a logic for counting which day of month is this from the date 
@@ -62,8 +61,24 @@
         - covered up the 98% for numbersviewset and overall viewset increased upto 18% to 25% 
 
 16_may: 
-    - Amazon Redshift: A fully managed data warehouse service.
-    - ETL applied to load the finalized data into datawarehouse tables
-    - copy job is use to integrate data directly from s3 to redshift.
-     
+    - ClaimDeck:
+        - Achieved 100% test coverage for numbersviewset.
+        - Improved test coverage by adding response validation.
+        - Implemented functionality for org_type = carrier for organization and user.
+        - Completed get_reserve_data API for private organizations.
+
+    - AWS Redshift:
+        - Amazon Redshift: A fully managed data warehouse service.
+        - Applied ETL processes to load finalized data into data warehouse tables.
+        - Used copy job to integrate data directly from S3 to Redshift.
+
+17_may: 
+    - ClaimDeck:
+        - covered up the response data for org_type 
+        - making get_budget not none 
     
+    - redshift:
+        - managing the cluster in aws 
+        - removed cluster and stopped services 
+        - working on Dbeaver and connecting to serverless redshift service
+        - created tables and loading data from s3.

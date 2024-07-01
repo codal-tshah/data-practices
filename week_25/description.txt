@@ -1,0 +1,90 @@
+24_june:
+    - Lawson:
+        - Worked on scraping data from Grainger.
+        - Identified XPath for different UIs.
+        - Utilized Scrapy shell and Scrapy.
+        - Found the need to work on nested URLs for navigating through hrefs.
+        - Encountered issues loading table data.
+        - Discovered that href URLs could not be fetched.
+        - Unable to fetch URLs using SplashRequest and Scrapy shell.
+
+25_june:
+    - ClaimDeck:
+        - Edited the Django export script.
+        - Updated all data fields.
+        - Edited the dehydrated method in class.
+        - Modified all columns and datetime stamps.
+        - Unable to set up three dynamic fields.
+        - Added base custom logic for exporting dynamic fields as column names.
+
+26_june:
+    - Lawson:
+        - Applied nested URLs logic in Scrapy to fetch data.
+        - Unable to fetch URLs and scrape product details with Scrapy.
+        - Started working on a Scrapy-Selenium script.
+        - Added middleware and user agents, but still no results.
+        - Continued using Scrapy and Scrapy-Selenium for Grainger.
+        - Unable to fetch href URLs, dropped the Scrapy-Selenium script.
+        - Edited SplashRequest to fetch data, still no results.
+
+June 27:
+    - ClaimDeck:
+        - Django Export:
+            - Struggled to set dynamic field logic.
+            - Added custom script for exporting dynamic fields.
+            - Encountered duplicate columns due to dynamic fields.
+            - Completed the setup of all dynamic fields.
+
+28_june:
+    - ClaimDeck:
+        - Worked on Django export to add access status as dynamic fields for claim contacts:
+            - Has Access/No Access/Pending Access.
+            - Encountered issues in the script for access status.
+            - Created logic for access status from viewsets.
+            - Reformatted logic to prevent duplicate columns.
+
+    - Lawson:
+        - Started writing a Selenium script.
+        - Encountered issues with the script and created a separate folder structure for working with Selenium using POC code setup.
+        - Added global XPath for product details.
+        - Identified three different UIs for different search queries.
+
+
+claimdeck django export description:
+Updates to Matter Claim Information Export in Django
+These changes are essential to support invoicing requirements and improve the clarity and utility of the export file.
+Changes to Current Export
+1. Renamed Columns:
+   - Changed the title of the "Organization" column to "Claim Added in Organizations" (Column E in the example file).
+
+2. Date and Timestamp Customizations:
+   - Added a "Date Created" column (Column F) to display the claim creation date in a sortable date format.
+
+3. Invoice Description:
+   - Added an "Invoice Description" column (Column H) that combines "Claim Number" and "Claim Name" into a single entry, separated by a space.
+
+4. Claim Status Information:
+   - Added a "Claim Status" column (Column I).
+   - Added a "Claim Status Change Date" column (Column J) to display the date when the claim status changed. If there is no change, this date is the same as the claim creation date.
+
+5. Claims Professional and Legal Team Information:
+   - Added columns for each "Has Access" contact associated with a carrier organization that has access to the claim (Columns K through P).
+   - For each contact, included the user's name, contact type, and email address.
+
+6. Contact Type Details:
+   - Provided information for the following contact types if added to the claim:
+     - Claims Adjuster
+     - Claims Manager
+     - Case Administrator
+     - Lead Attorney
+     - Assisting Attorney
+     - Paralegal
+     - Legal Assistant
+     - Other
+   - For each contact type, included the following details:
+     - First and Last Name
+     - Contact Type
+     - Email Address
+     - Access Status (No Access, Has Access, Pending)
+
+   - If more than one user exists for any of these contact types, provided information for each user in additional columns.
